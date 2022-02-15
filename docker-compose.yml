@@ -4,7 +4,7 @@ services:
     build: .
     ports:
     - 2000:3524
-  jenkins-app-2:
+  jenkins-app:
     image: jenkins/jenkins:lts
     build: dockerInstall/
     privileged: true
