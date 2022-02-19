@@ -3,7 +3,8 @@
         "express": "*"
     },
     "scripts": {
-        "start": "node index.js"
+        "start": "node index.js",
+        "test" : "mocha"
     },
     "devDependencies": {
         "mocha":"^9.2.1"
