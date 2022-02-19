@@ -4,5 +4,9 @@
     },
     "scripts": {
         "start": "node index.js"
+    },
+    "devDependencies": {
+        "mocha":"^9.2.1"
     }
+
 }
