@@ -12,7 +12,6 @@ node {
      }
    }
    stage('docker build/push') {
-     sh 'docker login -u nsane4stargate'
      docker.withRegistry('https://index.docker.io/', 'dockerhub') {
        def app = docker.build("nsane4stargate/jenkins-docker-pipeline-demo:${commit_id}", '.').push()
      }
