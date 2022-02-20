@@ -17,7 +17,7 @@ node {
           def app = docker.build("nsane4stargate/jenkins-docker-slack-node:${commit_id}", '.').push()
         }
          // build results
-         currentBuild.results = "SUCCESS"
+         currentBuild.result = "SUCCESS"
       
          // send slack notification
          slackSend (color: '#FF0000', message: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
@@ -25,7 +25,7 @@ node {
    }catch(e){
       
       // build results
-      currentBuild.results = "FAILURE"
+      currentBuild.result = "FAILURE"
       
       // send slack notification
       slackSend (color: '#FF0000', message: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
