@@ -10,7 +10,6 @@ node {
       app.pull()
       app.inside(){
          sh 'npm install'
-         sh 'npm start'
       }
    }
    stage('test with a DB') {
