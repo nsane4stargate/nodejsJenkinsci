@@ -12,7 +12,7 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://index.docker.io', 'dockerhubupload') {
+     docker.withRegistry('https://registry.hub.docker.com', 'dockerhubupload') {
        def app = docker.build("nsane4stargate/jenkins-pipeline:${commit_id}", '.').push()
      }
    }
