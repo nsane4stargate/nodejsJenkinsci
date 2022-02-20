@@ -16,6 +16,11 @@ node {
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhubupload') {
           def app = docker.build("nsane4stargate/jenkins-docker-slack-node:${commit_id}", '.').push()
         }
+         // build results
+         currentBuild.results = "SUCCESS"
+      
+         // send slack notification
+         slackSend (color: '#FF0000', message: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
       }
    }catch(e){
       
