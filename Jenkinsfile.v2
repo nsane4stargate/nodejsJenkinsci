@@ -10,7 +10,9 @@ node {
       app.pull()
       app.inside(){
          sh 'npm install'
+         sh 'npm start'
       }
+      app.stop()
    }
    stage('test with a DB') {
      def mysql = docker.image('mysql').run("-e MYSQL_ALLOW_EMPTY_PASSWORD=yes") 
