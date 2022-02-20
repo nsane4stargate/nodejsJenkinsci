@@ -14,7 +14,7 @@ node {
       }
       stage('docker build/push') {
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhubupload') {
-          def app = docker.build("nsane4stargate/jenkins-pipeline:${commit_id}", '.').push()
+          def app = docker.build("nsane4stargate/jenkins-docker-slack-node:${commit_id}", '.').push()
         }
       }
    }catch(e){
